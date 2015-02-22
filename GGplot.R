@@ -49,4 +49,10 @@ df  <- melt(iris, id.vars = "Species")
 ggplot(df, aes(Species, value, fill = variable)) +
   geom_bar(stat = "identity", position = "dodge") +
   scale_fill_brewer(palette = "Set1")
+#you can use scale_color_manual(values = c("red", "blue", "etc")) for custom colors
+#remember that c is a vector and must be defined beforehand. 
+
+#Websites/books to look up for Rstudio assistance.  
+#R Graphics Cookbook
+#docs.ggplot2.org
 
