@@ -34,3 +34,19 @@ library(MASS)
 ggplot(birthwt, aes(factor(race), bwt)) + 
   geom_boxplot()
 
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) + 
+  geom_point(aes(shape = Species), size = 4) + 
+  facet_grid(.~ Species)
+myplot + 
+  geom_point(aes(shape = Species), size = 4) +
+  facet_grid(.~ Species)
+
+library("reshape2")
+library(RColorBrewer)
+display.brewer.all()
+
+df  <- melt(iris, id.vars = "Species")
+ggplot(df, aes(Species, value, fill = variable)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_brewer(palette = "Set1")
+
